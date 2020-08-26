@@ -6,6 +6,12 @@ import sun.jvm.hotspot.runtime.Thread;
 
 public class SanityTest extends HomePage{
 
+    private static final By SEARCH_WHERE_TO = By.id("ao-clp-hero-with-search__where-input");
+    private static final By SEARCH_INPUT = By.xpath("//div[contains(text(),'Iceland')]");
+    private static final By SEARCH_WHEN = By.id("ao-clp-hero-with-search__when-input");
+    private static final By SEARCH_WHEN_INPUT = By.xpath("//div[contains(text(),'Jun 21')]");
+    private static final By SEARCH_BUTTON = By.xpath("//button[contains(text(),'Search')]");
+
   public SanityTest() {
    }
 
@@ -21,11 +27,11 @@ public class SanityTest extends HomePage{
     @Test
     public void searchTour() throws InterruptedException {
         log.info(">---Test Case to -> searchTour--");
-        driver.findElement(By.id("ao-clp-hero-with-search__where-input")).click();
-        driver.findElement(By.xpath("//div[contains(text(),'Iceland')]")).click();
-        driver.findElement(By.id("ao-clp-hero-with-search__when-input")).click();
-        driver.findElement(By.xpath("//div[contains(text(),'Jun 21')]")).click();
-        driver.findElement(By.xpath("//button[contains(text(),'Search')]")).click();
+        driver.findElement(SEARCH_WHERE_TO).click();
+        driver.findElement(SEARCH_INPUT).click();
+        driver.findElement(SEARCH_WHEN).click();
+        driver.findElement(SEARCH_WHEN_INPUT).click();
+        driver.findElement(SEARCH_BUTTON).click();
         System.out.println(getDriver().getCurrentUrl());
         Assert.assertEquals("https://www.tourradar.com/d/iceland#month=june-2021",driver.getCurrentUrl());
     }
