@@ -1,3 +1,4 @@
+import com.aventstack.extentreports.ExtentReports;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -12,11 +13,8 @@ public class HomePage {
     public static WebDriver driver;
     public static Logger log = LogManager.getLogger(HomePage.class);
 
-
-
     public HomePage() {
     }
-
     public WebDriver getDriver() {
         return driver;
     }
@@ -40,5 +38,6 @@ public class HomePage {
         driver.quit();
         log.info(">---Quit browser---");
     }
+
 
 }
